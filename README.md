@@ -7,7 +7,7 @@ Next.js 14+ starter template with app router, shadcn/ui, typesafe env, icons and
 - pnpm
 
 ```bash
-pnpm create-next-app -e https://github.com/redpangilinan/next-entree
+pnpm create next-app -e https://github.com/redpangilinan/next-entree
 ```
 
 - npm
