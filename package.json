@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format:write": "pnpm prettier ./src --write",
+    "format": "pnpm prettier ./src --write",
     "format:check": "pnpm prettier ./src --check"
   },
   "dependencies": {
