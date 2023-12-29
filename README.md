@@ -4,7 +4,7 @@ Next.js 14+ starter template with app router, shadcn/ui, typesafe env, icons and
 
 ## Usage
 
-- pnpm
+- pnpm (recommended)
 
 ```bash
 pnpm create next-app -e https://github.com/redpangilinan/next-entree
@@ -14,6 +14,18 @@ pnpm create next-app -e https://github.com/redpangilinan/next-entree
 
 ```bash
 npx create-next-app -e https://github.com/redpangilinan/next-entree
+```
+
+- yarn
+
+```bash
+yarn create next-app -e https://github.com/redpangilinan/next-entree
+```
+
+- bun
+
+```bash
+bunx create-next-app -e https://github.com/redpangilinan/next-entree
 ```
 
 ## Features
@@ -30,18 +42,16 @@ This template uses [shadcn](https://github.com/shadcn)'s Next.js app structure f
 
 ## Scripts
 
+If you are using a different package manager, be sure to update the package.json format scripts.
+
 1. Check project formatting
 
 ```bash
 pnpm format:check
-# or
-npm run format:check
 ```
 
 2. Format the project
 
 ```bash
-pnpm format:write
-# or
-npm run format:write
+pnpm format
 ```
