@@ -7,19 +7,19 @@ Next.js 14+ starter template with app router, shadcn/ui, typesafe env, icons and
 1. Setup a project using the template
 
 ```bash
-pnpm create next-app -e https://github.com/redpangilinan/next-entree
+pnpm create next-app -e https://github.com/MeatBoyed/next-ndx-starter
 ```
 
 ```bash
-npx create-next-app -e https://github.com/redpangilinan/next-entree
+npx create-next-app -e https://github.com/MeatBoyed/next-ndx-starter
 ```
 
 ```bash
-yarn create next-app -e https://github.com/redpangilinan/next-entree
+yarn create next-app -e https://github.com/MeatBoyed/next-ndx-starter
 ```
 
 ```bash
-bunx create-next-app -e https://github.com/redpangilinan/next-entree
+bunx create-next-app -e https://github.com/MeatBoyed/next-ndx-starter
 ```
 
 2. Copy `.env.example` to `.env.local`
@@ -56,3 +56,5 @@ pnpm format:check
 ```bash
 pnpm format
 ```
+## **To-Do**
+- Enforce Feature file structure using tslint

@@ -2,9 +2,13 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
+import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import QueryProvider from "@/components/query-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -65,23 +69,30 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body
-        className={cn(
-          "min-h-screen bg-background antialiased",
-          inter.className
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body
+          className={cn(
+            "min-h-screen bg-background antialiased",
+            inter.className
+          )}
         >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+          <QueryProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {process.env.NODE_ENV === "production" && (
+                <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_TAG_ID} />
+              )}
+              {children}
+            </ThemeProvider>
+          </QueryProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
